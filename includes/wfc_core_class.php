@@ -37,9 +37,9 @@
             $this->month_arr = $wfc_months;
         }
 
-        public function buildPropertyDirectory($prop_id){
+        public function buildPropertyDirectory( $prop_id ){
             if( !file_exists( PROP_DIR.DS.$prop_id.DS.'reports' ) ){
-                if(!mkdir( PROP_DIR.DS.$prop_id.DS.'reports', 755 )){
+                if( !mkdir( PROP_DIR.DS.$prop_id.DS.'reports', 755 ) ){
                     return false;
                 }
             }
@@ -56,7 +56,8 @@
                     if( count( $webproperties->getItems() ) > 0 ){
                         $items_p = $webproperties->getItems();
                         foreach( $items_p as $b ){
-                            $profiles = $analytics->management_profiles->listManagementProfiles( $a->getId(), $b->getId() );
+                            $profiles =
+                                $analytics->management_profiles->listManagementProfiles( $a->getId(), $b->getId() );
                             if( count( $profiles->getItems() ) > 0 ){
                                 $items_s = $profiles->getItems();
                                 foreach( $items_s as $c ){
@@ -137,7 +138,8 @@
             while( ($buffer = fgets( $f, 4096 )) !== false ){
                 if( preg_match( '#<page #', $buffer ) && !$is_intextarea ){
                     if( !$remove ){
-                        $textarea .= '<textarea name="content['.$i.']" id="content'.$i.'" style="width:100%;height:400px;">';
+                        $textarea .= '<textarea name="content['.$i.']" id="content'.$i.
+                            '" style="width:100%;height:400px;">';
                         $is_intextarea = true;
                         $i++;
                     }
@@ -150,12 +152,29 @@
                             $remove = false;
                         }
                     } else{
-                        if( !preg_match( '#<page_header#', $buffer ) && !preg_match( '#</page_header#', $buffer ) && $is_intextarea ){
-                            $textarea .= str_replace( array('<br />'. '<br>'), '', $buffer );
+                        if( !preg_match( '#<page_header#', $buffer ) && !preg_match( '#</page_header#', $buffer ) &&
+                            $is_intextarea
+                        ){
+                            $textarea .= str_replace( array('<br />'.'<br>'), '', $buffer );
                         }
                     }
                 }
             }
             return $textarea.'<input type="hidden" name="nb_textarea" id="nb_textarea" value="'.$i.'" />';
+        }
+
+        public function print_extra_script( $jsObj, $echo = true ){
+
+            if( !$echo ){
+                return $jsObj;
+            }
+
+            echo "<script type='text/javascript'>\n"; // CDATA and type='text/javascript' is not needed for HTML 5
+            echo "/* <![CDATA[ */\n";
+            echo "$jsObj\n";
+            echo "/* ]]> */\n";
+            echo "</script>\n";
+
+            return true;
         }
     }
