@@ -1,0 +1,329 @@
+[10-Feb-2014 15:41:13 America/Denver] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 59
+[10-Feb-2014 15:41:14 America/Denver] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 59
+[11-Feb-2014 13:32:56 America/Denver] PHP Fatal error:  Cannot access empty property in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 67
+[11-Feb-2014 13:33:17 America/Denver] PHP Warning:  scandir(): Directory name cannot be empty in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 90
+[11-Feb-2014 13:33:17 America/Denver] PHP Warning:  scandir(): Directory name cannot be empty in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 90
+[11-Feb-2014 13:33:17 America/Denver] PHP Warning:  scandir(): Directory name cannot be empty in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 90
+[11-Feb-2014 13:33:17 America/Denver] PHP Warning:  scandir(): Directory name cannot be empty in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 90
+[12-Feb-2014 08:21:14 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home/wfcdemo/public_html/analytics/lib/storage.php on line 25
+[12-Feb-2014 10:10:30 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[12-Feb-2014 10:10:30 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[12-Feb-2014 10:10:45 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[12-Feb-2014 10:10:45 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[12-Feb-2014 10:11:10 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[12-Feb-2014 10:15:20 America/Denver] PHP Warning:  rename(/home/wfcdemo/public_html/analytics/admin/../awr_reports/,/home/wfcdemo/public_html/analytics/admin/../properties//UA-22941768-1/45190467): Directory not empty in /home/wfcdemo/public_html/analytics/admin/moveawr.php on line 6
+[29-Apr-2014 06:49:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:49:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:49:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:49:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:49:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:58:58 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:58:58 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:58:58 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:58:58 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:58:58 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:59:05 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:59:05 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:59:05 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:59:05 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 06:59:05 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 79
+[29-Apr-2014 07:00:47 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:00:47 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:00:47 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:00:47 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:00:47 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:01:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:01:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:01:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:01:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:01:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:15 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:15 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:15 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:15 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:15 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:54 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:54 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:54 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:54 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:02:54 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:22 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:22 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:22 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:22 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:22 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[29-Apr-2014 07:03:30 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 80
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 80
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 80
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 80
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 80
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: month in /home/wfcdemo/public_html/analytics/admin/emails.php on line 4
+[29-Apr-2014 07:03:31 America/Denver] PHP Notice:  Undefined index: year in /home/wfcdemo/public_html/analytics/admin/emails.php on line 5
+[16-May-2014 20:22:18 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:22:18 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:22:18 America/Denver] PHP Fatal error:  require(): Failed opening required 'ROOT/load.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:13 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:13 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:13 America/Denver] PHP Fatal error:  require(): Failed opening required 'ROOT/load.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:30 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:30 America/Denver] PHP Warning:  require(ROOT/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:30 America/Denver] PHP Fatal error:  require(): Failed opening required 'ROOT/load.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:44 America/Denver] PHP Warning:  require(/home/wfcdemo/public_html/analytics/admin/load.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:24:44 America/Denver] PHP Fatal error:  require(): Failed opening required '/home/wfcdemo/public_html/analytics/admin/load.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 2
+[16-May-2014 20:25:26 America/Denver] PHP Warning:  include(editprop.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:25:26 America/Denver] PHP Warning:  include(editprop.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:25:26 America/Denver] PHP Warning:  include(): Failed opening 'editprop.php' for inclusion (include_path='/home/wfcdemo/public_html/analytics/src:.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:26:17 America/Denver] PHP Warning:  include(editprop.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:26:17 America/Denver] PHP Warning:  include(editprop.php): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:26:17 America/Denver] PHP Warning:  include(): Failed opening 'editprop.php' for inclusion (include_path='/home/wfcdemo/public_html/analytics/src:.:/usr/lib/php:/usr/local/lib/php') in /home/wfcdemo/public_html/analytics/admin/index.php on line 57
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:26 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 86
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 91
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: month in /home/wfcdemo/public_html/analytics/admin/emails.php on line 4
+[16-May-2014 20:27:34 America/Denver] PHP Notice:  Undefined index: year in /home/wfcdemo/public_html/analytics/admin/emails.php on line 5
+[16-May-2014 20:27:41 America/Denver] PHP Notice:  Undefined variable: a in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 19
+[16-May-2014 20:27:41 America/Denver] PHP Fatal error:  Call to a member function displayTable() on a non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 19
+[31-May-2014 02:19:15 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:19:15 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:41 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:41 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:51 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:51 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:56 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:20:56 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:07 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:07 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:41 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:21:41 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:41 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:50 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:21:50 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:50 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:54 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:21:54 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:21:54 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:22:04 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:22:04 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:22:04 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:22:34 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:22:34 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:22:34 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:23:15 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:23:15 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:23:15 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:26:31 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:26:31 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:26:31 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:32:12 America/Denver] PHP Notice:  Undefined variable: properties in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 6
+[31-May-2014 02:32:12 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:32:12 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:32:39 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:32:39 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:33:28 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:33:28 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 8
+[31-May-2014 02:40:25 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:40:25 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:40:25 America/Denver] PHP Warning:  Missing argument 1 for wfc_core_class::getSitesList(), called in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 37 and defined in /home/wfcdemo/public_html/analytics/includes/wfc_core_class.php on line 41
+[31-May-2014 02:41:33 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:41:33 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:41:58 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:41:58 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:42:08 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:42:08 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:43:36 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:43:36 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:43:41 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:43:41 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:44:17 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:44:17 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:46:28 America/Denver] PHP Notice:  Undefined property: stdClass::$property_names in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:46:28 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:47:24 America/Denver] PHP Notice:  Trying to get property of non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 02:47:24 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 5
+[31-May-2014 03:05:21 America/Denver] PHP Warning:  file_get_contents(/home/wfcdemo/public_html/analytics/property_master.json): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 9
+[31-May-2014 03:05:21 America/Denver] PHP Notice:  Trying to get property of non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:05:21 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:05:31 America/Denver] PHP Warning:  file_get_contents(/home/wfcdemo/public_html/analytics/property_master.json): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 9
+[31-May-2014 03:05:31 America/Denver] PHP Notice:  Trying to get property of non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:05:31 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:06:02 America/Denver] PHP Warning:  file_get_contents(/home/wfcdemo/public_html/analytics/property_master.json): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 9
+[31-May-2014 03:06:02 America/Denver] PHP Notice:  Trying to get property of non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:06:02 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:06:44 America/Denver] PHP Warning:  file_get_contents(/home/wfcdemo/public_html/analytics/property_master.json): failed to open stream: No such file or directory in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 9
+[31-May-2014 03:06:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:06:44 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:56 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:57 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:16:58 America/Denver] PHP Notice:  Undefined variable: obj in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 23
+[31-May-2014 03:24:55 America/Denver] PHP Fatal error:  Cannot use object of type stdClass as array in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 12
+[31-May-2014 03:30:47 America/Denver] PHP Fatal error:  Cannot use object of type stdClass as array in /home/wfcdemo/public_html/analytics/admin/editprop.php on line 22
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:12:46 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:09 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:14 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/profiles.php on line 84
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: auto in /home/wfcdemo/public_html/analytics/admin/pdfs.php on line 89
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: month in /home/wfcdemo/public_html/analytics/admin/emails.php on line 4
+[31-May-2014 13:13:31 America/Denver] PHP Notice:  Undefined index: year in /home/wfcdemo/public_html/analytics/admin/emails.php on line 5
