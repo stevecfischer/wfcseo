@@ -126,14 +126,14 @@
     }
 
     function scf_number_format( $n, $d = 2 ){
-        if($n && !empty($n)){
+        if( $n && !empty($n) ){
             return number_format( $n, $d );
         }
     }
 
     function scf_curreny_format( $n, $d = 2 ){
-        if($n && !empty($n)){
-            return "$ " . number_format( $n, $d );
+        if( $n && !empty($n) ){
+            return "$ ".number_format( $n, $d );
         }
     }
 
@@ -266,6 +266,11 @@
         return scf_number_format( $wfcga->get_metric_by_month( 'ga:sessions', '', '', $month, $year ), 0 );
     }
 
+    function bouncerate_month( $month, $year ){
+        global $wfcga;
+        return scf_number_format( $wfcga->get_metric_by_month( 'ga:bounceRate', '', '', $month, $year ), 0 );
+    }
+
     function total_ctr_month( $month, $year ){
         global $wfcga;
         return $wfcga->get_metric_by_month( 'ga:CTR', '', '', $month, $year );
@@ -278,6 +283,22 @@
         global $wfcga;
         $metrics = $wfcga->get_metric_by_month(
             'ga:goalCompletionsAll',
+            array('dimensions' => "ga:channelGrouping"),
+            'all',
+            $month,
+            $year
+        );
+        $r       = array();
+        foreach( $metrics->rows as $referrer ){
+            $r[$referrer[0]] = $referrer[1];
+        }
+        return $r;
+    }
+
+    function all_phone_goal_completions_month( $month, $year ){
+        global $wfcga;
+        $metrics = $wfcga->get_metric_by_month(
+            'ga:goal6Completions',
             array('dimensions' => "ga:channelGrouping"),
             'all',
             $month,

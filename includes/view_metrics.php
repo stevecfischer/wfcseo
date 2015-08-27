@@ -1,203 +1,321 @@
 <?php
-    define( 'MONTH', "06" );
-    define( 'YEAR', "2015" );
-    define( 'TABLE_ID', $_POST['code'] );
-    $allgoal          = allgoal_completions();
-    $manual_data_file = PROP_DIR.DS.intval( $_POST['code'] ).DS.YEAR.DS.MONTH.DS.'data.json';
-    $man_data         = array();
-    if( file_exists( $manual_data_file ) ){
-        $man_data = unserialize( file_get_contents( $manual_data_file ) );
-    }
-    $manual_data_array = array(
-        'Cost Per Conversion'          => 'cost_per_conversion',
-        'Closed Opportunities (Total)' => 'closed_opportunities',
-        'Closing Ratio'                => 'closing_ratio',
-        'Sales'                        => 'sales',
-        'Money Earned Per Lead'        => 'money_earned_per_lead',
-        'Average Sale'                 => 'average_sale',
-        'Goals'                        => 'goals',
-        'Ad Revenue Percentage'        => 'ad_revenue_percentage'
-    );
-    function get_man_data( $metric, $year, $month ){
-        $manual_data_file = PROP_DIR.DS.intval( $_POST['code'] ).DS.$year.DS.$month.DS.'data.json';
-        if( file_exists( $manual_data_file ) ){
-            $y = unserialize( file_get_contents( $manual_data_file ) );
-            if($y[$metric] && !empty($y[$metric])){
-                return $y[$metric];
-            }
-        }
-    }
+    $date1 = new DateTime( $_POST['f_year'].'-'.$_POST['f_month'] );
+    $date2 = new DateTime($_POST['t_year'].'-'.$_POST['t_month'] );
+    $to_date = $date2->format("Y-m");
+    $diff = $date1->diff( $date2 );
+    $time_period = ($diff->format( '%y' ) * 12) + ($diff->format( '%m' ));
 
+
+    define( 'TABLE_ID', $_POST['code'] );
+    define( 'TO_DATE', $to_date );
+    define( 'TIME_PERIOD', $time_period );
+
+    $dates = get_date_headings();
     function get_date_headings(){
         $date_cols = array();
-        for( $i = 0; $i <= 5; $i++ ){
-            $m           = date( "Y-m", strtotime( "NOW"." -$i months" ) );
+        for( $i = 0; $i <= TIME_PERIOD; $i++ ){
+            $m           = date( "Y-m", strtotime( TO_DATE." -$i months" ) );
             $ym          = explode( "-", $m );
             $date_cols[] = $ym;
         }
         return array_reverse( $date_cols );
     }
 
-    $dates = get_date_headings();
-?>
+    function get_man_data( $metric, $year, $month ){
+        $manual_data_file = PROP_DIR.DS.intval( $_POST['code'] ).DS.$year.DS.$month.DS.'data.json';
+        if( file_exists( $manual_data_file ) ){
+            $y = unserialize( file_get_contents( $manual_data_file ) );
+            if( $y[$metric] && !empty($y[$metric]) ){
+                return $y[$metric];
+            }
+        }
+        return "N/A";
+    }
 
+    function allGoalsMetric(){
+        $dates           = get_date_headings();
+        $allgoalsforyear = array();
+        foreach( $dates as $date ):
+            $allgoalsm         = allgoal_completions_month( $date[1], $date[0] );
+            $allgoalsforyear[] = $allgoalsm;
+        endforeach;
 
-<?php
-    $allgoalsforyear = array();
-    foreach( $dates as $date ):
-        $allgoalsm         = allgoal_completions_month( $date[1], $date[0] );
-        $allgoalsforyear[] = $allgoalsm;
-    endforeach;
-    //    print_r($allgoalsforyear);
-    $other    = array_column( $allgoalsforyear, "(Other)" );
-    $direct   = array_column( $allgoalsforyear, 'Direct' );
-    $display  = array_column( $allgoalsforyear, 'Display' );
-    $organic  = array_column( $allgoalsforyear, 'Organic Search' );
-    $paid     = array_column( $allgoalsforyear, 'Paid Search' );
-    $referral = array_column( $allgoalsforyear, 'Referral' );
-    $social   = array_column( $allgoalsforyear, 'Social' );
+        return $allgoalsforyear;
+    }
+
+    $allgoalsforyear = allGoalsMetric();
+
+    function allPhoneGoalsMetric(){
+        $dates           = get_date_headings();
+        $allgoalsforyear = array();
+        foreach( $dates as $date ):
+            $allgoalsm         = all_phone_goal_completions_month( $date[1], $date[0] );
+            $allgoalsforyear[] = $allgoalsm;
+        endforeach;
+
+        return $allgoalsforyear;
+    }
+
+    $allPhonegoalsforyear = allPhoneGoalsMetric();
+
+    function getGoalMetric( $metricLabel ){
+        $allgoalsforyear = allGoalsMetric();
+        tableCellWrap( array_column( $allgoalsforyear, $metricLabel ) );
+    }
+
+    function getPhoneGoalMetric( $metricLabel ){
+        $allPhonegoalsforyear = allPhoneGoalsMetric();
+        tableCellWrap( array_column( $allPhonegoalsforyear, $metricLabel ) );
+    }
+
+    function tableCellWrap( $array ){
+        foreach( $array as $v ):
+            echo "<td>".$v."</td>";
+        endforeach;
+    }
+
 ?>
-<table id='table1' class="table table-bordered">
-    <thead>
-    <tr>
-        <th>Metrics</th>
-        <?php foreach( $dates as $date ): ?>
-            <th><?php echo $date[1].'-'.$date[0] ?></th>
-        <?php endforeach; ?>
-    </tr>
-    </thead>
-    <tbody class="table-striped">
-    <tr>
-        <td>Other</td>
-        <?php foreach( $other as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Direct</td>
-        <?php foreach( $direct as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Display</td>
-        <?php foreach( $display as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Organic Search</td>
-        <?php foreach( $organic as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Paid Search</td>
-        <?php foreach( $paid as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>SERP Calls</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo get_man_data( 'serp_calls', $date[0], $date[1] ); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Referral</td>
-        <?php foreach( $referral as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Social</td>
-        <?php foreach( $social as $v ): ?>
-            <td><?php echo $v ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Conversions (Analytics)</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo goalcompletions_total_month( $date[1], $date[0] ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Sessions</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo sessions_month( $date[1], $date[0] ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Clicks</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo adwords_clicks_month( $date[1], $date[0] ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>PPC Impressions</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo adwords_impressions_month( $date[1], $date[0] ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>TOTAL CTR</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_number_format( total_ctr_month( $date[1], $date[0] ), 2 ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>PPC Cost</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( adwords_ppc_cost_month( $date[1], $date[0] ), 2 ) ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Cost Per Conversion</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( get_man_data( 'cost_per_conversion', $date[0], $date[1] ), 2 ); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Closed Opportunities (Total)</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo get_man_data( 'closed_opportunities', $date[0], $date[1] ); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Closing Ratio</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo get_man_data( 'closing_ratio', $date[0], $date[1] ); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Sales</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( get_man_data( 'sales', $date[0], $date[1] ), 2); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Money Earned Per Lead</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( get_man_data( 'money_earned_per_lead', $date[0], $date[1] ), 2); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Average Sale</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( get_man_data( 'average_sale', $date[0], $date[1] ), 2); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Goals</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo scf_curreny_format( get_man_data( 'goals', $date[0], $date[1] ), 2); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <tr>
-        <td>Ad Revenue Percentage</td>
-        <?php foreach( $dates as $date ): ?>
-            <td><?php echo get_man_data( 'ad_revenue_percentage', $date[0], $date[1] ); ?></td>
-        <?php endforeach; ?>
-    </tr>
-    </tbody>
-</table>
+<div class="col-md-12 ng-scope">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Report</strong></h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="wfc-metric-table table table-condensed table-bordered">
+                    <thead>
+                    <tr>
+                        <th class="first-col"></th>
+                        <?php foreach( $dates as $date ): ?>
+                            <th><?php echo $date[1].'-'.$date[0] ?></th>
+                        <?php endforeach; ?>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="section-heading warning">
+                        <td class="first-col ng-binding">General Performance:</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Unique Visits</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo sessions_month( $date[1], $date[0] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="ng-scope last-subsection-row">
+                        <td class="no-line first-col ng-binding">Bounce Rate</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo bouncerate_month( $date[1], $date[0] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="empty-row"></tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="section-heading warning">
+                        <td class="first-col ng-binding">Form Conversions:</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Direct</td>
+                        <?php getGoalMetric( "Direct" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Display</td>
+                        <?php getGoalMetric( "Display" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Organic</td>
+                        <?php getGoalMetric( "Organic Search" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">SEM</td>
+                        <?php getGoalMetric( "Paid Search" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Referral</td>
+                        <?php getGoalMetric( "Referral" ) ?>
+                    </tr>
+                    <tr class="ng-scope last-subsection-row">
+                        <td class="no-line first-col ng-binding">Social</td>
+                        <?php getGoalMetric( "Social" ) ?>
+                    </tr>
+                    <tr class="success ng-scope" ng-repeat="total in section.totals">
+                        <td class="total-heading first-col ng-binding">Total Form Conversions</td>
+                        <?php foreach( $allgoalsforyear as $monthgoals ): ?>
+                            <td><?php echo array_sum( $monthgoals ); ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="empty-row"></tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="section-heading warning">
+                        <td class="first-col ng-binding">Phone Conversions:</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Direct</td>
+                        <?php getPhoneGoalMetric( "Direct" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Display</td>
+                        <?php getPhoneGoalMetric( "Display" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Organic</td>
+                        <?php getPhoneGoalMetric( "Organic Search" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">SEM</td>
+                        <?php getPhoneGoalMetric( "Paid Search" ) ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Referral</td>
+                        <?php getPhoneGoalMetric( "Referral" ) ?>
+                    </tr>
+                    <tr
+                        class="ng-scope last-subsection-row">
+                        <td class="no-line first-col ng-binding">Social</td>
+                        <?php getPhoneGoalMetric( "Social" ) ?>
+                    </tr>
+                    <tr class="success ng-scope" ng-repeat="total in section.totals">
+                        <td class="total-heading first-col ng-binding">Total Phone Conversions</td>
+                        <?php foreach( $allPhonegoalsforyear as $monthgoals ): ?>
+                            <td><?php echo array_sum( $monthgoals ); ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="empty-row"></tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="section-heading warning">
+                        <td class="first-col ng-binding">SEM Metrics:</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Impressions</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo adwords_impressions_month( $date[1], $date[0] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Clicks</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo adwords_clicks_month( $date[1], $date[0] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">CTR</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo scf_number_format( total_ctr_month( $date[1], $date[0] ), 2 ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr
+                        class="ng-scope last-subsection-row">
+                        <td class="no-line first-col ng-binding">SEM Spend</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo scf_curreny_format( adwords_ppc_cost_month( $date[1], $date[0] ), 2 ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="empty-row"></tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="section-heading warning">
+                        <td class="first-col ng-binding">ROI Summary:</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Total Monthly Conversions</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo get_man_data( "t_month_conversions", $date[0], $date[1] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr>
+                        <td class="no-line first-col ng-binding">Total Monthly Budget</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo get_man_data( "t_month_budget", $date[0], $date[1] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr
+                        class="ng-scope last-subsection-row">
+                        <td class="no-line first-col ng-binding">Cost Per Conversion</td>
+                        <?php foreach( $dates as $date ): ?>
+                            <td><?php echo get_man_data( "cost_per_conversion", $date[0], $date[1] ) ?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                    <tr class="empty-row"></tr>
+                    </tbody>
+                    <?php if( $_POST['code'] == "30359942" ): ?>
+                        <tbody>
+                        <tr class="section-heading warning">
+                            <td class="first-col ng-binding">Custom Client Metrics:</td>
+                            <td colspan="6"></td>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Total Inbound Phone Calls</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "t_inbound_calls", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Replacement Appointments</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "replacement_appts", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Repair &amp; Tune-up Appointments</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "repair_appts", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Replacement Opportunities</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "replacement_opps", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Replacement Quotes</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "replacement_quotes", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td class="no-line first-col ng-binding">Thumbtack Lead Source</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "thumbtack_leads", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr
+                            class="ng-scope last-subsection-row">
+                            <td class="no-line first-col ng-binding">Craigslist Lead Source</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "craigslist_leads", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr class="success ng-scope" ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ng-binding">MTD Acutal Sales</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "mtd_sales", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr class="success ng-scope" ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ng-binding">MTD Sales Trending</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "mtd_sales_trend", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr class="success ng-scope" ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ng-binding">Total Monthly Sales Goal</td>
+                            <?php foreach( $dates as $date ): ?>
+                                <td><?php echo get_man_data( "t_mtd_sales_goal", $date[0], $date[1] ) ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr class="empty-row"></tr>
+                        </tbody>
+                    <?php endif; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

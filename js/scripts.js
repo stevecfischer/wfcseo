@@ -1032,6 +1032,26 @@ window.onload = function () {
         });
         return false;
     });
+
+    $('[data-action="ajax-viewmetrics"]').click(function (e) {
+        console.log('ddd');
+        e.preventDefault();
+        emptyView();
+        loading();
+        $('#viewmetrics').modal('hide');
+        obj = $(".viewmetrics").serializeArray();
+        $.ajax({
+            url: "includes/ajax.php",
+            type: "POST",
+            data: obj,
+            dataType: "html",
+            success: function (data) {
+                $('.main-content').html(data);
+            }
+        });
+        return false;
+    });
+
     $('[data-action="ajax-right"]').click(function (e) {
         e.preventDefault();
         ajax_right($(this));
@@ -1041,7 +1061,6 @@ window.onload = function () {
         loading();
         $('#view_site_template').modal('hide');
         $('#property_dashboard').modal('hide');
-        console.log('eee');
         $('#create_new').modal('hide');
         if ($this.data('names')) {
             var params = $this.data('names').split(',');
@@ -1236,9 +1255,9 @@ $(function () {
         console.log('ere');
         $('html,body').animate({scrollTop: 0}, 300);
     });
-    $(document).on('click', '.wfc-web-property a.table-site-template', function () {
+    $(document).on('click', '.wfc-web-property a.table-site-template, .wfc-web-property a.view-metrics', function () {
         var propertyId = $(this).data('code');
-        console.log(propertyId);
+        $("#viewmetrics").find('input#code').val(propertyId);
         $("#property_dashboard").find('input#code').val(propertyId);
     })
 });

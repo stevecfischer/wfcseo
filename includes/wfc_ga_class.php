@@ -46,6 +46,22 @@
             }
             return $data->totalsForAllResults[$metric];
         }
+
+        public function new_get_metric_by_month( $metric, $optParams = array(),$format = "single", $month, $year, $propertyID ){
+            global $demo;
+            $from = $year.'-'.$month.'-01';
+            $to   = $year.'-'.$month.'-'.cal_days_in_month( CAL_GREGORIAN, $month, $year );
+            $m    = "$metric";
+            if( ! empty($optParams) && isset($optParams) ){
+                $data = $demo->getHtmlOutput( 'ga:'.$propertyID, $from, $to, $m, $optParams );
+            } else{
+                $data = $demo->getHtmlOutput( 'ga:'.$propertyID, $from, $to, $m );
+            }
+            if($format == "all"){
+                return $data;
+            }
+            return $data->totalsForAllResults[$metric];
+        }
     }
 
     //Signature: array array_column ( array $input , mixed $column_key [, mixed $index_key ] )

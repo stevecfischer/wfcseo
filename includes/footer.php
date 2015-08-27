@@ -1,52 +1,11 @@
 <?php
+    $localizeJs  = new wfc_core_class();
+    $accessToken = $storage->get();
+    $tokenObj    = json_decode( $accessToken );
 
-    require_once 'load.php';
-
-    // Print out authorization URL.
-    if( !$authHelper->isAuthorized() ){
-        echo "<p id=\"revoke\"><a href='$authUrl'>Grant access to Google Analytics data</a></p>";
-        exit;
-    }
-
-    //Deal with POST datas
-    require_once './includes/datas.php';
-
-    if( isset($_GET['export']) && isset($_POST['code']) ){
-        require_once './includes/export.php';
-    }
-?>
-<!DOCTYPE html>
-<html ng-app="awr">
-<head>
-    <meta charset="UTF-8">
-    <title>WFC Local</title>
-    <link href="<?php echo CSS_URI; ?>/bootstrap.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URI; ?>/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URI; ?>/toastr.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URI; ?>/angular-chart.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URI; ?>/ng-table.min.css"/>
-    <base href="http://wfcseo.wfcdemo.com/">
-</head>
-<body ng-controller="scfDebug">
-<?php
-    if( isset($_GET['create_new']) ){
-        require_once './includes/new.php';
-    } else{
-        if( isset($_GET['export']) && isset($_POST['code']) ){
-            //require_once './includes/export.php';
-        } else{
-            require_once './includes/index.php';
-        }
-    }
-
-    $localizeJs      = new wfc_core_class();
-    $accessToken= $storage->get();
-    $tokenObj= json_decode($accessToken);
-
-
-
-    $scfLocalizedStr = 'var wfcLocalized = {"site":"'.URL.'", "ajaxurl":"'.AJAX_URL.'", "access_token":"'.$tokenObj->access_token.'"};';
+    $scfLocalizedStr =
+        'var wfcLocalized = {"site":"'.URL.'", "ajaxurl":"'.AJAX_URL.'", "access_token":"'.$tokenObj->access_token.
+        '"};';
     $localizeJs->print_extra_script( $scfLocalizedStr );
 ?>
 <script type="text/javascript" src="<?php echo JS_URI; ?>/angular.min.js"></script>
@@ -60,11 +19,11 @@
 <!-- ANGULARJS CONTROLLERS -->
 <script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/chartController.js"></script>
 <script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/sandController.js"></script>
+<script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/dashController.js"></script>
 <!-- ANGULARJS DIRECTIVES -->
 <script type="text/javascript" src="<?php echo DIRECTIVES_URI; ?>/directives.js"></script>
 <!-- ANGULARJS SERVICES -->
 <script type="text/javascript" src="<?php echo SERVICES_URI; ?>/sandService.js"></script>
-
 <script type="text/javascript" src="<?php echo JS_URI; ?>/jquery.js"></script>
 <!--        <script type="text/javascript" src="--><?php //echo JS_URI; ?><!--/form.js"></script>-->
 <script type="text/javascript" src="<?php echo URL; ?>/tinymce/tinymce.min.js"></script>

@@ -34,71 +34,6 @@
         </div>
         <!--/.container-->
         <div class="modal fade"
-             id="view_site_template"
-             tabindex="-1"
-             role="dialog"
-             aria-labelledby="myModalLabel"
-             aria-hidden="true"
-             modal-show>
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form role="form"
-                              method="POST"
-                              action="./index.php?export"
-                              data-action="./index.php?export"
-                              id="form_"
-                              class="view_data"
-                              enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="month">Month</label>
-                                <select class="wfc-select form-control" name="month" ng-model="property.month">
-                                    <?php foreach( $wfc_core->month_arr as $k => $m ): ?>
-                                        <?php //@scftodo: future bug when January comes around ?>
-                                        <?php $selected = ($k == date( 'm' ) - 01 ? 'selected="selected"' : ''); ?>
-                                        <option value="<?php echo $k; ?>" <?php echo $selected; ?>><?php echo $m; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="year">Year</label>
-                                <select class="wfc-select form-control" name="year" ng-model="property.year">
-                                    <?php for( $i = 2007; $i <= date( 'Y' ); $i++ ): ?>
-                                        <?php $selected = ($i == date( 'Y' ) ? 'selected="selected"' : ''); ?>
-                                        <option value="<?php echo $i; ?>" <?php echo $selected; ?>><?php echo $i; ?></option>
-                                    <?php endfor; ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden"
-                                       name="code"
-                                       id="code"
-                                       ng-model="property.id"
-                                       class="wfc-input form-control">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit"
-                                        data-action="ajax-right"
-                                        data-target="exportReport"
-                                        data-where="#form_"
-                                        data-names="code,month,year"
-                                        class="wfc-property-action-btn btn btn-sm btn-primary">Export Report
-                                </button>
-                                <input type="button"
-                                       class="btn btn-sm btn-danger wfc-property-action-btn"
-                                       value="Send Report"
-                                       ng-click="sendReport()"/>
-                                <!--                            <button type="submit" data-action="ajax-right" data-target="emailReport" data-where="#form_" data-names="code,month,year" class="btn btn-sm btn-danger wfc-property-action-btn">Send Report</button>-->
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-        <div class="modal fade"
              id="property_dashboard"
              tabindex="-1"
              role="dialog"
@@ -155,76 +90,71 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal --><!-- Modal -->
         <div class="modal fade"
-             id="create_new"
+             id="viewmetrics"
              tabindex="-1"
              role="dialog"
              aria-labelledby="myModalLabel"
-             aria-hidden="true">
+             aria-hidden="true"
+             modal-show>
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <form role="form" method="POST" class="new" id="modalform" enctype="multipart/form-data">
+                        <form role="form"
+                              method="POST"
+                              id="form_viewmetrics"
+                              class="viewmetrics"
+                              enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="year">From Month</label>
+                                    <select class="wfc-select form-control" name="f_month">
+                                        <?php foreach( $wfc_core->month_arr as $k => $m ): ?>
+                                            <option value="<?php echo $k; ?>"><?php echo $m; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="month">To Month</label>
+                                    <select class="wfc-select form-control" name="t_month">
+                                        <?php foreach( $wfc_core->month_arr as $k => $m ): ?>
+                                            <option value="<?php echo $k; ?>" <?php echo ($m == date("M") ? "selected" : ""); ?>><?php echo $m; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="year">From Year</label>
+                                    <select class="wfc-select form-control" name="f_year">
+                                        <?php for( $i = 2014; $i <= date( 'Y' ); $i++ ): ?>
+                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <?php endfor; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="year">To Year</label>
+                                    <select class="wfc-select form-control" name="t_year">
+                                        <?php for( $i = 2014; $i <= date( 'Y' ); $i++ ): ?>
+                                            <option value="<?php echo $i; ?>" <?php echo ($i == "2015" ? "selected" : ""); ?>><?php echo $i; ?></option>
+                                        <?php endfor; ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <input type="text"
-                                       id="name"
-                                       name="name"
+                                <input type="hidden" name="code" id="code" class="wfc-input form-control">
+                                <input type="hidden"
+                                       name="fnc"
+                                       id="viewmetrics"
                                        class="wfc-input form-control"
-                                       placeholder="Enter Name"
-                                       value=""/>
+                                       value="viewmetrics">
                             </div>
                             <div class="form-group">
-                                <input type="text"
-                                       id="awr_file_name"
-                                       name="awr_file_name"
-                                       class="wfc-input form-control"
-                                       placeholder="Enter AWR Filename"
-                                       value=""/>
+                                <button type="submit"
+                                        data-action="ajax-viewmetrics"
+                                        class="wfc-property-action-btn btn btn-sm btn-primary">Continue
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <label for="logo_upload">File input</label>
-                                <input type="file" class="wfc-upload form-control" name="logo_upload" id="logo_upload">
-                                <input type="hidden" name="logo">
-                                <p class="help-block">Upload a logo</p>
-                            </div>
-                            <div class="form-group">
-                                <input type="text"
-                                       id="url"
-                                       name="url"
-                                       class="wfc-input form-control"
-                                       placeholder="Enter URL"
-                                       value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text"
-                                       id="code"
-                                       readonly="readonly"
-                                       class="wfc-input form-control"
-                                       name="codenew"
-                                       value=""/>
-                            </div>
-                            <div class="form-group">
-                                <label for="template">Template</label>
-                                <select class="wfc-select form-control" name="template">
-                                    <?php
-                                        $t = scandir( TPL_DIR.DS.$_SESSION['email'] );
-                                        foreach( $t as $v ){
-                                            if( $v != '.' && $v != '..' ){
-                                                if( substr( $v, -3 ) == 'tpl' && $v != '.' && $v != '..' ){
-                                                    echo '<option value="'.$v.'">'.substr( $v, 0, -4 ).'</option>';
-                                                }
-                                            }
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <button type="submit"
-                                    data-where="#modalform"
-                                    data-target="new"
-                                    data-names="name,awr_file_name,codenew,url,template,logo"
-                                    class="form-control btn btn-default">Submit
-                            </button>
                         </form>
                     </div>
                 </div>
@@ -232,7 +162,6 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
         <div class="modal fade"
              data-backdrop="static"
              data-keyboard="false"
@@ -253,7 +182,6 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
         <div class="modal fade"
              id="notalone"
              tabindex="-1"
@@ -273,6 +201,5 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
     </div>
 </div>

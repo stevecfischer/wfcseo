@@ -1,4 +1,4 @@
-var app = angular.module('awr', ['ngRoute', 'chart.js'], function () {
+var app = angular.module('awr', ['ngRoute', 'chart.js', 'ngTable', 'ngResource', 'ui.bootstrap'], function ($httpProvider) {
 
 });
 //constants
@@ -23,11 +23,49 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when('/sandbox/', {
             templateUrl: '/views/sandbox.php',
-            controller: 'SandController'
+            controller: 'MetricController'
         });
     $locationProvider.html5Mode(true);
 });
 
+
+app.value('transpose', function(items) {
+  var results = [];
+  angular.forEach(items, function(value, key) {
+    angular.forEach(value, function(inner, index) {
+      results[index] = results[index] || [];
+      results[index].push(inner);
+    });
+  });
+  return results;
+});
+
+app.value('transposeB', function(items) {
+  var results = [];
+    var monthChk = [];
+  angular.forEach(items, function(value, key) {
+      //["07", "(Other)", "21"]
+
+    angular.forEach(value, function(inner, index) {
+      results[index] = results[index] || [];
+      results[index].push(inner);
+    });
+  });
+  return results;
+});
+
+
+
+
+
+
+//////
+//////
+//////
+//////  OLD STUFF
+//////
+//////
+//////
 app.controller('dashboard', function ($scope, sharedProperties) {
     $scope.username = "Steve Fischer";
     $scope.stringValue = sharedProperties.getString;
@@ -35,6 +73,8 @@ app.controller('dashboard', function ($scope, sharedProperties) {
         sessionStorage.currentProp = angular.toJson(ID);
         sharedProperties.setString(ID); // this is updating ID in header
     };
+
+    $scope.months = wfcLocalized.months;
 }).service('sharedProperties', function () {
     var stringValue = angular.fromJson(sessionStorage.currentProp);
     return {

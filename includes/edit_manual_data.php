@@ -5,49 +5,97 @@
     if( file_exists( $manual_data_file ) ){
         $man_data = unserialize( file_get_contents( $manual_data_file ) );
     }
+
+    function formField( $label, $metric, $dataType = "" ){
+        $manual_data_file =
+        PROP_DIR.DS.intval( $_POST['code'] ).DS.intval( $_POST['year'] ).DS.$_POST['month'].DS.'data.json';
+        $man_data = unserialize( file_get_contents( $manual_data_file ) );
+        ?>
+        <div class="input-group">
+            <span class="input-group-addon"><?php echo $label ?></span>
+            <?php if( $dataType != "" ): ?>
+                <span class="input-group-addon"> $dataType</span>
+            <?php endif; ?>
+            <input name="<?php echo $metric ?>" class="form-control" value="<?php echo $man_data[$metric] ?>"/>
+        </div>
+        <?php
+    }
+
 ?>
 <div id="manual-data-form-wrapper">
     <form method="POST" action="#" id="manual-data-form">
-        <input type="hidden" name="fnc" value="updatemanualdata"/>
-        <input type="hidden" name="code" value="<?php echo $_POST['code'] ?>"/>
-        <input type="hidden" name="month" value="<?php echo $_POST['month'] ?>"/>
-        <input type="hidden" name="year" value="<?php echo $_POST['year'] ?>"/>
+        <input type="hidden" name="fnc" value="updatemanualdata"/> <input type="hidden"
+                                                                          name="code"
+                                                                          value="<?php echo $_POST['code'] ?>"/> <input
+            type="hidden"
+            name="month"
+            value="<?php echo $_POST['month'] ?>"/> <input type="hidden"
+                                                           name="year"
+                                                           value="<?php echo $_POST['year'] ?>"/>
         <div class="input-group">
-            <span class="input-group-addon">Cost Per Conversion</span><span class="input-group-addon"> $ </span>
-            <input name="cost_per_conversion" class="form-control" value="<?php echo $man_data['cost_per_conversion'] ?>"/>
+            <span class="input-group-addon">Cost Per Conversion</span>
+            <span class="input-group-addon"> $</span>
+            <input name="cost_per_conversion"
+                   class="form-control"
+                   value="<?php echo $man_data['cost_per_conversion'] ?>"/>
         </div>
         <div class="input-group">
             <span class="input-group-addon">Closed Opportunities (Total)</span>
-            <input name="closed_opportunities" class="form-control" value="<?php echo $man_data['closed_opportunities'] ?>"/>
+            <input name="closed_opportunities"
+                   class="form-control"
+                   value="<?php echo $man_data['closed_opportunities'] ?>"/>
         </div>
         <div class="input-group">
             <span class="input-group-addon">Closing Ratio</span>
             <input name="closing_ratio" class="form-control" value="<?php echo $man_data['closing_ratio'] ?>"/>
         </div>
         <div class="input-group">
-            <span class="input-group-addon">Sales</span><span class="input-group-addon"> $ </span>
+            <span class="input-group-addon">Sales</span>
+            <span class="input-group-addon"> $</span>
             <input name="sales" class="form-control" value="<?php echo $man_data['sales'] ?>"/>
         </div>
         <div class="input-group">
-            <span class="input-group-addon">Money Earned Per Lead</span><span class="input-group-addon"> $ </span>
-            <input name="money_earned_per_lead" class="form-control" value="<?php echo $man_data['money_earned_per_lead'] ?>"/>
+            <span class="input-group-addon">Money Earned Per Lead</span>
+            <span class="input-group-addon"> $</span>
+            <input name="money_earned_per_lead"
+                   class="form-control"
+                   value="<?php echo $man_data['money_earned_per_lead'] ?>"/>
         </div>
         <div class="input-group">
-            <span class="input-group-addon">Average Sale</span><span class="input-group-addon"> $ </span>
+            <span class="input-group-addon">Average Sale</span>
+            <span class="input-group-addon"> $</span>
             <input name="average_sale" class="form-control" value="<?php echo $man_data['average_sale'] ?>"/>
         </div>
         <div class="input-group">
-            <span class="input-group-addon">Goals</span><span class="input-group-addon"> $ </span>
+            <span class="input-group-addon">Goals</span>
+            <span class="input-group-addon"> $</span>
             <input name="goals" class="form-control" value="<?php echo $man_data['goals'] ?>"/>
         </div>
         <div class="input-group">
             <span class="input-group-addon">Ad Revenue Percentage</span>
-            <input name="ad_revenue_percentage" class="form-control" value="<?php echo $man_data['ad_revenue_percentage'] ?>"/>
+            <input name="ad_revenue_percentage"
+                   class="form-control"
+                   value="<?php echo $man_data['ad_revenue_percentage'] ?>"/>
         </div>
         <div class="input-group">
             <span class="input-group-addon">SERP Calls</span>
             <input name="serp_calls" class="form-control" value="<?php echo $man_data['serp_calls'] ?>"/>
         </div>
+        <?php formField( "Total Monthly Conversions", 't_month_conversions' ); ?>
+        <?php formField( "Total Monthly Budget", 't_month_budget' ); ?>
+        <?php formField( "Cost Per Conversion", 'cost_per_conversion' ); ?>
+        <?php if( $_POST['code'] == "30359942" ): ?>
+            <?php formField( "Total Inbound Phone Calls", 't_inbound_calls' ); ?>
+            <?php formField( "Replacement Appointments", 'replacement_appts' ); ?>
+            <?php formField( "Repair & Tune-up Appointments", 'repair_appts' ); ?>
+            <?php formField( "Replacement Opportunities", 'replacement_opps' ); ?>
+            <?php formField( "Replacement Quotes", 'replacement_quotes' ); ?>
+            <?php formField( "Thumbtack Lead Source", 'thumbtack_leads' ); ?>
+            <?php formField( "Craigslist Lead Source", 'craigslist_leads' ); ?>
+            <?php formField( "MTD Actual Sales", 'mtd_sales' ); ?>
+            <?php formField( "MTD Sales Trending", 'mtd_sales_trend' ); ?>
+            <?php formField( "Total Monthly Sales Goal", 't_mtd_sales_goal' ); ?>
+        <?php endif; ?>
         <button type="submit" class="update_manual_data">Update</button>
     </form>
 </div>
