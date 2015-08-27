@@ -11,3 +11,4 @@
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_URI; ?>/ng-table.min.css"/>
     <base href="http://wfcseo.wfcdemo.com/">
 </head>
+<body ng-controller="scfDebug">
