@@ -10,10 +10,6 @@
 
     //Deal with POST datas
     require_once './includes/datas.php';
-
-    if( isset($_GET['export']) && isset($_POST['code']) ){
-        require_once './includes/export.php';
-    }
 ?>
 <!DOCTYPE html>
 <html ng-app="awr">
@@ -30,15 +26,7 @@
 </head>
 <body ng-controller="scfDebug">
 <?php
-    if( isset($_GET['create_new']) ){
-        require_once './includes/new.php';
-    } else{
-        if( isset($_GET['export']) && isset($_POST['code']) ){
-            //require_once './includes/export.php';
-        } else{
-            require_once './includes/index.php';
-        }
-    }
+    require_once './includes/index.php';
 
     $localizeJs      = new wfc_core_class();
     $accessToken= $storage->get();
