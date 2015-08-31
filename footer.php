@@ -67,6 +67,7 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <form role="form"
+                              action="/view_report.php"
                               method="POST"
                               id="form_viewmetrics"
                               class="viewmetrics"
@@ -76,7 +77,8 @@
                                     <label for="year">From Month</label>
                                     <select class="wfc-select form-control" name="f_month">
                                         <?php foreach( $wfc_core->month_arr as $k => $m ): ?>
-                                            <option value="<?php echo $k; ?>"><?php echo $m; ?></option>
+                                            <option value="<?php echo $k; ?>" <?php echo($k == 06 ?
+                                                "selected" : ""); ?>><?php echo $m; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -84,7 +86,7 @@
                                     <label for="month">To Month</label>
                                     <select class="wfc-select form-control" name="t_month">
                                         <?php foreach( $wfc_core->month_arr as $k => $m ): ?>
-                                            <option value="<?php echo $k; ?>" <?php echo($m == date( "M" ) ?
+                                            <option value="<?php echo $k; ?>" <?php echo($k == 07 ?
                                                 "selected" : ""); ?>><?php echo $m; ?></option>
                                         <?php endforeach; ?>
                                     </select>
@@ -95,7 +97,8 @@
                                     <label for="year">From Year</label>
                                     <select class="wfc-select form-control" name="f_year">
                                         <?php for( $i = 2014; $i <= date( 'Y' ); $i++ ): ?>
-                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                            <option value="<?php echo $i; ?>" <?php echo($i == "2015" ? "selected" :
+                                                ""); ?>><?php echo $i; ?></option>
                                         <?php endfor; ?>
                                     </select>
                                 </div>
@@ -119,7 +122,6 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit"
-                                        data-action="ajax-viewmetrics"
                                         class="wfc-property-action-btn btn btn-sm btn-primary">Continue
                                 </button>
                             </div>
@@ -179,7 +181,7 @@
     $scfLocalizedStr =
         'var wfcLocalized = {"site":"'.URL.'", "ajaxurl":"'.AJAX_URL.'", "access_token":"'.$tokenObj->access_token.
         '"};';
-    $localizeJs->print_extra_script( $scfLocalizedStr );
+    $localizeJs->print_extra_scripts( $scfLocalizedStr );
 ?>
 <script type="text/javascript" src="<?php echo JS_URI; ?>/angular.min.js"></script>
 <script type="text/javascript" src="<?php echo JS_URI; ?>/angular-route.min.js"></script>
@@ -191,7 +193,7 @@
 <script type="text/javascript" src="<?php echo JS_URI; ?>/ui-bootstrap-angular.min.js"></script>
 <!-- ANGULARJS CONTROLLERS -->
 <script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/chartController.js"></script>
-<script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/sandController.js"></script>
+<script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/metricController.js"></script>
 <script type="text/javascript" src="<?php echo CONTROLLERS_URI; ?>/dashController.js"></script>
 <!-- ANGULARJS DIRECTIVES -->
 <script type="text/javascript" src="<?php echo DIRECTIVES_URI; ?>/directives.js"></script>
@@ -216,7 +218,7 @@
         echo '<script type="text/javascript">$("#notalone").modal("show");</script>';
     }
 
-    require_once './includes/app_tour_guide.php';
+//    require_once './includes/app_tour_guide.php';
 ?>
 <footer>
     <div class="scroll-to-top">Scroll to To Top</div>

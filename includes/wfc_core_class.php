@@ -163,12 +163,7 @@
             return $textarea.'<input type="hidden" name="nb_textarea" id="nb_textarea" value="'.$i.'" />';
         }
 
-        public function print_extra_script( $jsObj, $echo = true ){
-
-            if( !$echo ){
-                return $jsObj;
-            }
-
+        public function print_extra_scripts( $jsObj ){
             echo "<script type='text/javascript'>\n"; // CDATA and type='text/javascript' is not needed for HTML 5
             echo "/* <![CDATA[ */\n";
             echo "$jsObj\n";
@@ -176,5 +171,11 @@
             echo "</script>\n";
 
             return true;
+        }
+
+        function prepare_json($array){
+            $string = json_encode($array);
+
+            return str_replace( "\n", '\n', str_replace( '"', '\"', addcslashes( str_replace( "\r", '', (string)$string ), "\0..\37'\\" ) ) );
         }
     }

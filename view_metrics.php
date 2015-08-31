@@ -3,7 +3,7 @@
     $date2 = new DateTime($_POST['t_year'].'-'.$_POST['t_month'] );
     $to_date = $date2->format("Y-m");
     $diff = $date1->diff( $date2 );
-    $time_period = ($diff->format( '%y' ) * 12) + ($diff->format( '%m' ));
+    $time_period = ($diff->format( '%y' ) * 12) + ($diff->format( '%m' )) + 1;
 
 
     define( 'TABLE_ID', $_POST['code'] );
@@ -78,11 +78,11 @@
 <div class="col-md-12 ng-scope">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><strong>Report</strong></h3>
+            <h3 class="panel-title"><strong>Report</strong></h3> <a ng-click="toggleDetail">close</a>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
-                <table class="wfc-metric-table table table-condensed table-bordered">
+                <table class="wfc-metric-table table table-condensed table-bordered" ng-show="showTable">
                     <thead>
                     <tr>
                         <th class="first-col"></th>

@@ -994,27 +994,7 @@ window.Modernizr = (function (window, document, undefined) {
 window.onload = function () {
     var TIMEOUT = 15;//minutes
     refreshTiny();
-    $('#modalform').submit(function (e) {
-        $('#modalform').find('button[type="submit"]').val("<span class=\"glyphicon glyphicon-cog\"></span> Uploading logo");
-        var fd = new FormData($(this)[0]);
-        $.ajax({
-            url: "includes/ajax.php",
-            type: "POST",
-            data: fd,
-            dataType: "html",
-            cache: false,
-            contentType: false,
-            processData: false,
-            async: false,
-            success: function (data) {
-                console.log(data);
-                $('#modalform').find('input[name="logo"]').val(data);
-                $('#modalform').find('button[type="submit"]').val("<span class=\"glyphicon glyphicon-ok\"></span>");
-                ajax_right($('#modalform').find('button[type="submit"]'));
-            }
-        });
-        e.preventDefault();
-    });
+
     $('[data-action="ajax-updatemanualdata"]').click(function (e) {
         e.preventDefault();
         emptyView();

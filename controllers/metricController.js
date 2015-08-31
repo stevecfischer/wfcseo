@@ -1,5 +1,48 @@
 app.controller("MetricController", function ($scope, ngTableParams, $filter, sandService, $timeout, transpose, transposeB) {
-    $scope.months = ["June", "July", 'Aug'];
+
+    $scope.showTable = true;
+    $scope.toggleTable = function () {
+        if ($scope.showTable) {
+            $scope.showTable = false;
+        } else {
+            $scope.showTable = false;
+        }
+    };
+
+    $scope.apiData = angular.fromJson(localizedData.data);
+    console.log(angular.fromJson(localizedData.dates));
+    console.log($scope.apiData);
+
+    function dataPrep(metricObj) {
+
+        var chartLabels = [];
+        var chartData = [];
+        angular.forEach(metricObj.rows, function (value, key) {
+            //@sftodo: is there a more efficent way to do this???
+            var formatDate = value[0].slice(0,4) + "-" + value[0].slice(4,6);
+            chartLabels.push(formatDate);
+            chartData.push(value[1]);
+        });
+
+        $scope.labels = chartLabels;
+        $scope.data = [
+            chartData
+        ];
+    }
+
+    $scope.chartMe = function (metric) {
+        dataPrep($scope.apiData[metric]);
+        console.log($scope.labels);
+        console.log($scope.data);
+    }
+
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+
+    /////////////////////
+    /////////////////////
+    /////////////////////
     $scope.metricMap = {
         'Unique Visits': 2,
         'Bounce Rate': 3,
@@ -148,5 +191,16 @@ app.controller("MetricController", function ($scope, ngTableParams, $filter, san
 
         return sum;
 
+    }
+});
+
+app.filter('scfDateFormatter', function () {
+    return function (input) {
+        if (angular.isDefined(input)) {
+            if (input.length >= 8) {
+                input = input.slice(5, 6) + input.slice(6, 8) + "-" + input.slice(0, 4);
+            }
+        }
+        return input;
     }
 });

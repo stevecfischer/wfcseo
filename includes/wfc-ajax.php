@@ -35,6 +35,21 @@
     }
 
     function ajax_manualmetrics(){
+        //        $obj = array(
+        //            array(
+        //                "label"       => "General Performance",
+        //                'subsections' => array(
+        //                    array(
+        //                        'label'   => 'Unique Visits',
+        //                        'metrics' => array(5, 5)
+        //                    ),
+        //                    array(
+        //                        'label'   => 'Bounce Rate',
+        //                        'metrics' => array(5, 5)
+        //                    )
+        //                ),
+        //            )
+        //        );
 
         $dates = get_date_headings();
 
@@ -58,11 +73,7 @@
         }
     }
 
-    function ajax_dates(){
-        $dates = get_date_headings();
-        echo(json_encode( $dates ));
-        die();
-    }
+
 
     function get_date_headings(){
         $date_cols = array();
