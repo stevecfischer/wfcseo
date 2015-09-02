@@ -212,17 +212,7 @@ ul.list-sites{
     z-index    :100;
 }
 .wfc-toolbar{
-    z-index       :50;
-    width         :100%;
-    position      :fixed;
-    top           :0;
-    left          :0;
-    border-bottom :1px solid #293744;
-    background    :#2f3f4e;
-    height        :55px;
-    color         :white;
-    padding       :10px;
-    text-align    :right;
+    background :#2f3f4e;
 }
 .create_new{
     cursor :pointer;
@@ -234,42 +224,55 @@ ul.list-sites{
 .nav-wfc-properties-container a, .nav-wfc-templates-container a{
     color :#FFF;
 }
-.wfc-toolbar a:after{
-    border-right :1px solid white;
-    height       :30px;
-    margin-top   :2px;
+.navbar-text{
+    color :#fff;
 }
-.wfc-toolbar a:last-child{
-    border-right :0;
+.navbar-nav > li > a{
+    color :#fff;
 }
-.wfc-toolbar img:hover{
-    background-color :black;
+.navbar-nav > li > a:hover{
+    color :#000;
 }
-.wfc-toolbar img, .wfc-toolbar a{
-    margin-left   :5px;
-    margin-right  :5px;
-    border-radius :4px;
+.dropdown-submenu{
+    position :relative;
 }
-.wfc-toolbar a{
-    color           :white;
-    text-decoration :none;
-    cursor          :pointer;
-    height          :55px;
+.dropdown-submenu > .dropdown-menu{
+    top                   :0;
+    left                  :100%;
+    margin-top            :-6px;
+    margin-left           :-1px;
+    -webkit-border-radius :0 6px 6px 6px;
+    -moz-border-radius    :0 6px 6px 6px;
+    border-radius         :0 6px 6px 6px;
 }
-.wfc-toolbar a:hover{
-    text-shadow :1px 1px gray;
+.dropdown-submenu:hover > .dropdown-menu{
+    display :block;
 }
-.wfc-toolbar .right{
-    float        :right;
-    margin-right :100px;
-    margin-top   :6px;
+.dropdown-submenu > a:after{
+    display           :block;
+    content           :" ";
+    float             :right;
+    width             :0;
+    height            :0;
+    border-color      :transparent;
+    border-style      :solid;
+    border-width      :5px 0 5px 5px;
+    border-left-color :#cccccc;
+    margin-top        :5px;
+    margin-right      :-10px;
 }
-.wfc-toolbar .glyphicon{
-    font-size :29px;
-    height    :55px;
+.dropdown-submenu:hover > a:after{
+    border-left-color :#ffffff;
 }
-.wfc-toolbar p{
-    margin-top :6px;
+.dropdown-submenu.pull-left{
+    float :none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu{
+    left                  :-100%;
+    margin-left           :10px;
+    -webkit-border-radius :6px 0 6px 6px;
+    -moz-border-radius    :6px 0 6px 6px;
+    border-radius         :6px 0 6px 6px;
 }
 /* SCF stylings */
 ul.sidebar-menu li ul.sub li a{
@@ -690,11 +693,11 @@ nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
 
 /********************/
 .wfc-metric-table td{
-    text-align: right;
+    text-align :right;
 }
 .section-heading .first-col{
-    font-weight:700;
-    text-align:left;
+    font-weight :700;
+    text-align  :left;
 }
 .section-heading.blank-cell{
     background-color :#f5f5f5;
@@ -702,7 +705,7 @@ nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
 .first-col{
     width :300px;
 }
-.table>tbody>tr.last-subsection-row > td{
+.table > tbody > tr.last-subsection-row > td{
     /*border-bottom :2px solid;*/
 }
 .last-subsection-row > td.no-line{
@@ -712,5 +715,5 @@ nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
 
 }
 .empty-row{
-    height:33px;
+    height :33px;
 }

@@ -250,7 +250,8 @@
     foreach( $manual_metric_handles_array as $metric_handle ){
         $rows = array();
         foreach( $dates as $date ):
-            $allMetricData[$metric_handle]['rows'][] = array($date[1], get_man_data( $metric_handle, $date[0], $date[1]));
+            $allMetricData[$metric_handle]['rows'][] =
+                array($date[1], get_man_data( $metric_handle, $date[0], $date[1] ));
         endforeach;
     }
 
@@ -286,7 +287,20 @@
         $dataBridge->prepare_json( $obj ).'"};';
     $dataBridge->print_extra_scripts( $localizedData );
 ?>
-<div class="col-md-12 ng-scope">
+<div class="col-md-4">
+    <div class="row">
+        <div class="col-md-12" id="line-chart">
+            <div class="panel panel-default">
+                <div class="panel-heading">Line Chart</div>
+                <div class="panel-body">
+                    <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true"
+                            click="onClick" hover="onHover" series="series"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-8">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title"><strong>Report</strong></h3>
@@ -304,11 +318,11 @@
                     </thead>
                     <tbody>
                     <tr class="section-heading warning">
-                        <td class="first-col ng-binding">General Performance:</td>
+                        <td class="first-col ">General Performance:</td>
                         <td colspan="<?php echo (int)TIME_PERIOD + 1; ?>"></td>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('sessions')">Chart</a>
                             Unique Visits
                         </td>
@@ -316,8 +330,8 @@
                             <td><?php echo sessions_month( $date[1], $date[0] ) ?></td>
                         <?php endforeach; ?>
                     </tr>
-                    <tr class="ng-scope last-subsection-row">
-                        <td class="no-line first-col ng-binding">
+                    <tr class=" last-subsection-row">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('bounceRate')">Chart</a>
                             Bounce Rate
                         </td>
@@ -329,53 +343,53 @@
                     </tbody>
                     <tbody>
                     <tr class="section-heading warning">
-                        <td class="first-col ng-binding">Form Conversions:</td>
+                        <td class="first-col ">Form Conversions:</td>
                         <td colspan="6"></td>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteDirect')">Chart</a>
                             Direct
                         </td>
                         <?php getGoalMetric( "Direct" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteDisplay')">Chart</a>
                             Display
                         </td>
                         <?php getGoalMetric( "Display" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteOrganic')">Chart</a>
                             Organic
                         </td>
                         <?php getGoalMetric( "Organic Search" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteSEM')">Chart</a>
                             SEM
                         </td>
                         <?php getGoalMetric( "Paid Search" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteReferral')">Chart</a>
                             Referral
                         </td>
                         <?php getGoalMetric( "Referral" ) ?>
                     </tr>
-                    <tr class="ng-scope last-subsection-row">
-                        <td class="no-line first-col ng-binding">
+                    <tr class=" last-subsection-row">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalCompleteSocial')">Chart</a>
                             Social
                         </td>
                         <?php getGoalMetric( "Social" ) ?>
                     </tr>
-                    <tr class="success ng-scope" ng-repeat="total in section.totals">
-                        <td class="total-heading first-col ng-binding">Total Form Conversions</td>
+                    <tr class="success " ng-repeat="total in section.totals">
+                        <td class="total-heading first-col ">Total Form Conversions</td>
                         <?php foreach( $allgoalsforyear as $monthgoals ): ?>
                             <td><?php echo array_sum( $monthgoals ); ?></td>
                         <?php endforeach; ?>
@@ -384,54 +398,54 @@
                     </tbody>
                     <tbody>
                     <tr class="section-heading warning">
-                        <td class="first-col ng-binding">Phone Conversions:</td>
+                        <td class="first-col ">Phone Conversions:</td>
                         <td colspan="6"></td>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteDirect')">Chart</a>
                             Direct
                         </td>
                         <?php getPhoneGoalMetric( "Direct" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteDisplay')">Chart</a>
                             Display
                         </td>
                         <?php getPhoneGoalMetric( "Display" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteOrganic')">Chart</a>
                             Organic
                         </td>
                         <?php getPhoneGoalMetric( "Organic Search" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteSEM')">Chart</a>
                             SEM
                         </td>
                         <?php getPhoneGoalMetric( "Paid Search" ) ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteReferral')">Chart</a>
                             Referral
                         </td>
                         <?php getPhoneGoalMetric( "Referral" ) ?>
                     </tr>
                     <tr
-                        class="ng-scope last-subsection-row">
-                        <td class="no-line first-col ng-binding">
+                        class=" last-subsection-row">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('goalPhoneCompleteSocial')">Chart</a>
                             Social
                         </td>
                         <?php getPhoneGoalMetric( "Social" ) ?>
                     </tr>
-                    <tr class="success ng-scope" ng-repeat="total in section.totals">
-                        <td class="total-heading first-col ng-binding">Total Phone Conversions</td>
+                    <tr class="success " ng-repeat="total in section.totals">
+                        <td class="total-heading first-col ">Total Phone Conversions</td>
                         <?php foreach( $allPhonegoalsforyear as $monthgoals ): ?>
                             <td><?php echo array_sum( $monthgoals ); ?></td>
                         <?php endforeach; ?>
@@ -440,11 +454,11 @@
                     </tbody>
                     <tbody>
                     <tr class="section-heading warning">
-                        <td class="first-col ng-binding">SEM Metrics:</td>
+                        <td class="first-col ">SEM Metrics:</td>
                         <td colspan="6"></td>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('impressions')">Chart</a>
                             Impressions
                         </td>
@@ -453,7 +467,7 @@
                         <?php endforeach; ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('adClicks')">Chart</a>
                             Clicks
                         </td>
@@ -462,7 +476,7 @@
                         <?php endforeach; ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('adCTR')">Chart</a>
                             CTR
                         </td>
@@ -471,8 +485,8 @@
                         <?php endforeach; ?>
                     </tr>
                     <tr
-                        class="ng-scope last-subsection-row">
-                        <td class="no-line first-col ng-binding">
+                        class=" last-subsection-row">
+                        <td class="no-line first-col ">
                             <a ng-click="chartMe('adCost')">Chart</a>
                             SEM Spend
                         </td>
@@ -484,24 +498,33 @@
                     </tbody>
                     <tbody>
                     <tr class="section-heading warning">
-                        <td class="first-col ng-binding">ROI Summary:</td>
+                        <td class="first-col ">ROI Summary:</td>
                         <td colspan="6"></td>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding"><a ng-click="chartMe('t_month_conversions')">Chart </a>Total Monthly Conversions</td>
+                        <td class="no-line first-col ">
+                            <a ng-click="chartMe('t_month_conversions')">Chart</a>
+                            Total Monthly Conversions
+                        </td>
                         <?php foreach( $dates as $date ): ?>
                             <td><?php echo get_man_data( "t_month_conversions", $date[0], $date[1] ) ?></td>
                         <?php endforeach; ?>
                     </tr>
                     <tr>
-                        <td class="no-line first-col ng-binding"><a ng-click="chartMe('t_month_budget')">Chart </a>Total Monthly Budget</td>
+                        <td class="no-line first-col ">
+                            <a ng-click="chartMe('t_month_budget')">Chart</a>
+                            Total Monthly Budget
+                        </td>
                         <?php foreach( $dates as $date ): ?>
                             <td><?php echo get_man_data( "t_month_budget", $date[0], $date[1] ) ?></td>
                         <?php endforeach; ?>
                     </tr>
                     <tr
-                        class="ng-scope last-subsection-row">
-                        <td class="no-line first-col ng-binding"><a ng-click="chartMe('cost_per_conversion')">Chart </a>Cost Per Conversion</td>
+                        class=" last-subsection-row">
+                        <td class="no-line first-col ">
+                            <a ng-click="chartMe('cost_per_conversion')">Chart</a>
+                            Cost Per Conversion
+                        </td>
                         <?php foreach( $dates as $date ): ?>
                             <td><?php echo get_man_data( "cost_per_conversion", $date[0], $date[1] ) ?></td>
                         <?php endforeach; ?>
@@ -511,66 +534,87 @@
                     <?php if( $_POST['code'] == "30359942" ): ?>
                         <tbody>
                         <tr class="section-heading warning">
-                            <td class="first-col ng-binding">Custom Client Metrics:</td>
+                            <td class="first-col ">Custom Client Metrics:</td>
                             <td colspan="6"></td>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('t_inbound_calls')">Chart </a>Total Inbound Phone Calls</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('t_inbound_calls')">Chart</a>
+                                Total Inbound Phone Calls
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "t_inbound_calls", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('replacement_appts')">Chart </a>Replacement Appointments</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('replacement_appts')">Chart</a>
+                                Replacement Appointments
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "replacement_appts", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('repair_appts')">Chart </a>Repair &amp; Tune-up Appointments</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('repair_appts')">Chart</a>
+                                Repair &amp; Tune-up Appointments
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "repair_appts", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('replacement_opps')">Chart </a>Replacement Opportunities</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('replacement_opps')">Chart</a>
+                                Replacement Opportunities
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "replacement_opps", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('replacement_quotes')">Chart </a>Replacement Quotes</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('replacement_quotes')">Chart</a>
+                                Replacement Quotes
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "replacement_quotes", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr>
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('thumbtack_leads')">Chart </a>Thumbtack Lead Source</td>
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('thumbtack_leads')">Chart</a>
+                                Thumbtack Lead Source
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "thumbtack_leads", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
                         <tr
-                            class="ng-scope last-subsection-row">
-                            <td class="no-line first-col ng-binding"><a ng-click="chartMe('craigslist_leads')">Chart </a>Craigslist Lead Source</td>
+                            class=" last-subsection-row">
+                            <td class="no-line first-col ">
+                                <a ng-click="chartMe('craigslist_leads')">Chart</a>
+                                Craigslist Lead Source
+                            </td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "craigslist_leads", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
-                        <tr class="success ng-scope" ng-repeat="total in section.totals">
-                            <td class="total-heading first-col ng-binding">MTD Acutal Sales</td>
+                        <tr class="success " ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ">MTD Acutal Sales</td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "mtd_sales", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
-                        <tr class="success ng-scope" ng-repeat="total in section.totals">
-                            <td class="total-heading first-col ng-binding">MTD Sales Trending</td>
+                        <tr class="success " ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ">MTD Sales Trending</td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "mtd_sales_trend", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>
                         </tr>
-                        <tr class="success ng-scope" ng-repeat="total in section.totals">
-                            <td class="total-heading first-col ng-binding">Total Monthly Sales Goal</td>
+                        <tr class="success " ng-repeat="total in section.totals">
+                            <td class="total-heading first-col ">Total Monthly Sales Goal</td>
                             <?php foreach( $dates as $date ): ?>
                                 <td><?php echo get_man_data( "t_mtd_sales_goal", $date[0], $date[1] ) ?></td>
                             <?php endforeach; ?>

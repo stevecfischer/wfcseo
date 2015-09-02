@@ -29,11 +29,13 @@ app.controller("MetricController", function ($scope, ngTableParams, $filter, san
             chartData
         ];
     }
-
+$scope.test = "true";
     $scope.chartMe = function (metric) {
+        $scope.fixedPosition = true;
         dataPrep($scope.apiData[metric]);
         console.log($scope.labels);
         console.log($scope.data);
+
     }
 
     $scope.onClick = function (points, evt) {

@@ -1,5 +1,6 @@
 var app = angular.module('awr', ['ngRoute', 'chart.js', 'ngTable', 'ngResource', 'ui.bootstrap'], function ($httpProvider) {
-
+Chart.defaults.global.responsive = true;
+Chart.defaults.global.maintainAspectRatio = false;
 });
 //constants
 app.constant('scf', {
@@ -126,12 +127,6 @@ app.service('scfDebugService', function () {
     };
 });
 
-app.controller('propController2', function ($scope, $http) {
-    $scope.sendReport = function () {
-        console.log($scope.property);
-
-    }
-});
 app.controller('propController', function ($scope, $route, $routeParams) {
     var foo = $route.current.saction;
     $scope.propId = $routeParams.propId;

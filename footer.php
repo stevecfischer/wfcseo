@@ -144,7 +144,7 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <p>You have been disconnected due to your inactivity,
-                            <a href="index.php">click here to reconnect.</a>
+                            <a href="<?php echo URL; ?>/index.php">click here to reconnect.</a>
                         </p>
                     </div>
                 </div>
