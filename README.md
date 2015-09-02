@@ -1,5 +1,11 @@
-wfcseo
+WFC SEO Dashboard
 ======
 
+Overview
+-------
 
-WFC Analytics App
+Version
+-------
+2.2
+
+
