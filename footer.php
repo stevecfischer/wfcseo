@@ -199,6 +199,7 @@
 <script type="text/javascript" src="<?php echo DIRECTIVES_URI; ?>/directives.js"></script>
 <!-- ANGULARJS SERVICES -->
 <script type="text/javascript" src="<?php echo SERVICES_URI; ?>/sandService.js"></script>
+<script type="text/javascript" src="<?php echo SERVICES_URI; ?>/metricService.js"></script>
 <script type="text/javascript" src="<?php echo JS_URI; ?>/jquery.js"></script>
 <!--        <script type="text/javascript" src="--><?php //echo JS_URI; ?><!--/form.js"></script>-->
 <script type="text/javascript" src="<?php echo URL; ?>/tinymce/tinymce.min.js"></script>

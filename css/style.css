@@ -717,3 +717,6 @@ nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
 .empty-row{
     height :33px;
 }
+.glyphicon.glyphicon-stats{
+    float:left;
+}

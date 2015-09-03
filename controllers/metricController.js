@@ -1,5 +1,7 @@
-app.controller("MetricController", function ($scope, ngTableParams, $filter, sandService, $timeout, transpose, transposeB) {
+app.controller("MetricController", function ($scope, ngTableParams, $filter, sandService, $timeout, transpose, transposeB, metricService) {
 
+    $scope.propertyList = metricService.getProperties();
+    console.log($scope.propertyList);
     $scope.showTable = true;
     $scope.toggleTable = function () {
         if ($scope.showTable) {
@@ -19,7 +21,7 @@ app.controller("MetricController", function ($scope, ngTableParams, $filter, san
         var chartData = [];
         angular.forEach(metricObj.rows, function (value, key) {
             //@sftodo: is there a more efficent way to do this???
-            var formatDate = value[0].slice(0,4) + "-" + value[0].slice(4,6);
+            var formatDate = value[0].slice(0, 4) + "-" + value[0].slice(4, 6);
             chartLabels.push(formatDate);
             chartData.push(value[1]);
         });
@@ -29,7 +31,8 @@ app.controller("MetricController", function ($scope, ngTableParams, $filter, san
             chartData
         ];
     }
-$scope.test = "true";
+
+    $scope.test = "true";
     $scope.chartMe = function (metric) {
         $scope.fixedPosition = true;
         dataPrep($scope.apiData[metric]);

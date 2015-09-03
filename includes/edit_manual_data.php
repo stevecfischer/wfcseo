@@ -8,8 +8,8 @@
 
     function formField( $label, $metric, $dataType = "" ){
         $manual_data_file =
-        PROP_DIR.DS.intval( $_POST['code'] ).DS.intval( $_POST['year'] ).DS.$_POST['month'].DS.'data.json';
-        $man_data = unserialize( file_get_contents( $manual_data_file ) );
+            PROP_DIR.DS.intval( $_POST['code'] ).DS.intval( $_POST['year'] ).DS.$_POST['month'].DS.'data.json';
+        $man_data         = unserialize( file_get_contents( $manual_data_file ) );
         ?>
         <div class="input-group">
             <span class="input-group-addon"><?php echo $label ?></span>
@@ -24,14 +24,10 @@
 ?>
 <div id="manual-data-form-wrapper">
     <form method="POST" action="#" id="manual-data-form">
-        <input type="hidden" name="fnc" value="updatemanualdata"/> <input type="hidden"
-                                                                          name="code"
-                                                                          value="<?php echo $_POST['code'] ?>"/> <input
-            type="hidden"
-            name="month"
-            value="<?php echo $_POST['month'] ?>"/> <input type="hidden"
-                                                           name="year"
-                                                           value="<?php echo $_POST['year'] ?>"/>
+        <input type="hidden" name="fnc" value="updatemanualdata"/>
+        <input type="hidden" name="code" value="<?php echo $_POST['code'] ?>"/>
+        <input type="hidden" name="month" value="<?php echo $_POST['month'] ?>"/>
+        <input type="hidden" name="year" value="<?php echo $_POST['year'] ?>"/>
         <div class="input-group">
             <span class="input-group-addon">Cost Per Conversion</span>
             <span class="input-group-addon"> $</span>
@@ -84,7 +80,7 @@
         <?php formField( "Total Monthly Conversions", 't_month_conversions' ); ?>
         <?php formField( "Total Monthly Budget", 't_month_budget' ); ?>
         <?php formField( "Cost Per Conversion", 'cost_per_conversion' ); ?>
-        <?php if( $_POST['code'] == "30359942" ): ?>
+        <?php if( $_POST['code'] == "30359942" || $_POST['code'] == "34068105" ): ?>
             <?php formField( "Total Inbound Phone Calls", 't_inbound_calls' ); ?>
             <?php formField( "Replacement Appointments", 'replacement_appts' ); ?>
             <?php formField( "Repair & Tune-up Appointments", 'repair_appts' ); ?>

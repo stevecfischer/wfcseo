@@ -173,9 +173,19 @@
             return true;
         }
 
-        function prepare_json($array){
-            $string = json_encode($array);
-
+        public function prepare_json( $array ){
+            $string = json_encode( $array );
             return str_replace( "\n", '\n', str_replace( '"', '\"', addcslashes( str_replace( "\r", '', (string)$string ), "\0..\37'\\" ) ) );
+        }
+
+        public function get_property_name( $propertyID ){
+            $get_properties  = file_get_contents( "property_master.json" );
+            $property_master = json_decode( $get_properties );
+            foreach( $property_master->property_names as $property ){
+                $p = explode( ",", $property );
+                if( $p[0] == $propertyID ){
+                    return $p[1];
+                }
+            }
         }
     }

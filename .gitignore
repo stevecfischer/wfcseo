@@ -2,3 +2,5 @@
 .idea
 load.php
 load_local.php
+properties
+property_master.json

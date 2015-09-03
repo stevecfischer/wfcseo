@@ -5,7 +5,7 @@
             <?php echo '<p>Dashboard</p>'; ?>
             <button class="scfDebug" ng-click="debugStatus = ! debugStatus">Show Debug</button>
             <?php
-                echo '<p>Click to <a href="'.REAL_URL.'/index.php?tour=on">take the tour.</a></p>';
+                echo '<p>Click to <a href="/index.php?tour=on">take the tour.</a></p>';
                 echo '<div ng-view class="view-animate"></div>';
             ?>
         </div>
